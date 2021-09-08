@@ -21,9 +21,19 @@ print(numbers[-1] - numbers[0])
 #         if (nums[x] == 2) and (nums[x + 1] == 2):
 #             return True
 #     return False
-for i in range(0, len(numbers) - 1, 1):
-    if (numbers[i] == 2) and (numbers[i + 1] == 2):
-        print(True)
+
+
+# for i in range(0, len(numbers) - 1, 1):
+#     if (numbers[i] == 2) and (numbers[i + 1] == 2):
+#         print(True)
+
+result = False
+index = 0
+for number in numbers:
+    if (number == 2 and numbers[index-1] == 2):
+        result = True
+    index +=1
+print(result)
 
 
 
@@ -32,6 +42,18 @@ for i in range(0, len(numbers) - 1, 1):
 #    
 #    So [11, 6, 4, 99, 7, 11] would have sum of 22
 
+total = 0
+found_6 = False
+for number in numbers:
+    if number == 6:
+        found_6 = True
+    elif found_6:
+        if number == 7:
+            found_6 = False
+    else:
+        total += number
+print(number)
+
 
 # 5. HARD! Print the sum of the numbers. 
 #    Except the number 13 is very unlucky, so it does not count.
@@ -39,6 +61,17 @@ for i in range(0, len(numbers) - 1, 1):
 #    HINT - You will need to track the index throughout the loop.
 #
 #    So [5, 13, 2] would have sum of 5. 
+
+index = 0
+total = 0
+for number in numbers:
+    if number == 13 or numbers[index-1] == 13:
+        pass
+    else:
+        total += number
+        index += 1
+print(total)
+
 
 
 
